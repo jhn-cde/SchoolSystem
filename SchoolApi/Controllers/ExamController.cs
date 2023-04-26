@@ -10,27 +10,27 @@ namespace SchoolApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class StudentController: BaseController<Answer>
+    public class ExamController: BaseController<Answer>
     {
         private Context _context;
-        public StudentController(Context context): base(context)
+        public ExamController(Context context): base(context)
         {
             _context = context;
         }
 
         // Update Answer
         [HttpPut]
-        public Student? Put(Student student)
+        public Exam? Put(Exam exam)
         {
-            var studentDbo = _context.Students.Find(student.Id);
+            var examDbo = _context.Exams.Find(exam.Id);
 
-            if(studentDbo == null) return null;
+            if(examDbo == null) return null;
 
-            studentDbo.FirstName = student.FirstName;
-            studentDbo.LastName = student.LastName;
+            examDbo.Name = exam.Name;
+            examDbo.Date = exam.Date;
             _context.SaveChanges();
 
-            return studentDbo;
+            return examDbo;
         }
     }
 }

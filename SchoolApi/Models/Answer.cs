@@ -9,7 +9,6 @@ namespace SchoolApi.Models
     public class Answer
     {
         public long Id {get;set;}
-        public string Name {get;set;}
         public string AnswerText {get;set;}
         public Boolean IsCorrect {get;set;}
     }

@@ -11,7 +11,20 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<Context>( opt =>
-    opt.UseInMemoryDatabase("Student")
+    {
+        opt.UseInMemoryDatabase("Answer");
+        opt.UseInMemoryDatabase("Course");
+        opt.UseInMemoryDatabase("Exam");
+        opt.UseInMemoryDatabase("Question");
+        opt.UseInMemoryDatabase("ReviewHistory");
+        opt.UseInMemoryDatabase("Semester");
+        opt.UseInMemoryDatabase("Student");
+        opt.UseInMemoryDatabase("StudentAnswer");
+        opt.UseInMemoryDatabase("StudentCourse");
+        opt.UseInMemoryDatabase("Teacher");
+        opt.UseInMemoryDatabase("Topic");
+        opt.UseInMemoryDatabase("TopicReview");
+    }
 );
 
 var app = builder.Build();
